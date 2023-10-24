@@ -1,4 +1,4 @@
-import NavBar from './components/navBar';
+import './App.scss'
 function App() {
   return (
     <div>
