@@ -1,11 +1,12 @@
 import './index.scss'
 import { useState } from 'react'
-import LogoS from '../../assets/images/logo-s.png'
+import LogoS from '../../assets/images/logo-s-copy.png'
 import LogoSubtitle from '../../assets/images/logo_sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faLinkedin,
   faGithub,
+  faYoutube,
   faSkype,
 } from '@fortawesome/free-brands-svg-icons'
 import {
@@ -15,6 +16,7 @@ import {
   faSuitcase,
   faBars,
   faClose,
+  faPhone,
 } from '@fortawesome/free-solid-svg-icons'
 import { Link, NavLink } from 'react-router-dom'
 
@@ -28,7 +30,7 @@ const Sidebar = () => {
         to="/"
         onClick={() => setShowNav(false)}>
         <img src={LogoS} alt="Logo" />
-        <img className="sub-logo" src={LogoSubtitle} alt="Akshat" />
+        <img className="sub-logo" src={LogoSubtitle} alt="slobodan" />
       </Link>
       <nav className={showNav ? 'mobile-show' : ''}>
         <NavLink 
@@ -95,15 +97,16 @@ const Sidebar = () => {
             />
           </a>
         </li>
+        
         <li>
-          <a href="skype:live:.cid.bc785ba397d56d8" rel="noreferrer" target="_blank">
-            <FontAwesomeIcon
-              icon={faSkype}
-              color="#4d4d4e"
-              className="anchor-icon"
-            />
-          </a>
-        </li>
+        <a href="tel:+13527093766">
+        <FontAwesomeIcon
+          icon={faPhone}
+          color="#4d4d4e"
+          className="anchor-icon"
+    />
+  </a>
+</li>
       </ul>
       <FontAwesomeIcon 
           onClick={() => setShowNav(true)}
