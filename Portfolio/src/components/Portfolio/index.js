@@ -4,20 +4,23 @@ import AnimatedLetters from "../AnimatedLetters";
 import "./index.scss";
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../firebase';
-import one from '../../assets/images/1.png'
-import two from '../../assets/images/2.png'
-import three from '../../assets/images/3.png'
-import four from '../../assets/images/4.png'
-import five from '../../assets/images/5.png'
-import six from '../../assets/images/6.png'
-import seven from '../../assets/images/7.png'
-import eight from '../../assets/images/8.png'
+import Carousel from './carousel';
+import one from '../../assets/images/1.png';
+import two from '../../assets/images/2.png';
+import three from '../../assets/images/3.png';
+import four from '../../assets/images/4.png';
+import five from '../../assets/images/5.png';
+import six from '../../assets/images/6.png';
+import seven from '../../assets/images/7.png';
+import eight from '../../assets/images/8.png';
+
 
 
 const Portfolio = () => { 
     const [letterClass, setLetterClass] = useState('text-animate');
     const [portfolio, setPortfolio] = useState([]);
-
+    const images = [
+        one,two,three,four,five,six,seven,eight];
     useEffect(() => {
         const timer = setTimeout(() => {
             setLetterClass('text-animate-hover');
@@ -76,43 +79,33 @@ const Portfolio = () => {
                     />
                 </h1>
                 <div>{renderPortfolio(portfolio)}</div>
-                <div className="Project List">
-                    <ul>
+                <div className="project-list">
+                    <ol>
                         <li><a href="https://github.com/akshat04/Movies"><h4>Movie Portal</h4></a>
-                        <p>This is a dynamic web application where users can explore and watch movie trailers, as well as write and read reviews after watching the movies. 
-                            This project integrates multiple API functionalities to provide a comprehensive and engaging movie browsing experience.</p>
+                        <p>This is a dynamic web application where users can explore and watch movie trailers, as well as write and read reviews after watching the movies.
+                            This project integrates multiple API functionalities to provide a comprehensive and engaging movie browsing experience.
+                            Project uses springboot and mongodb for backend implementation and react for frontend implementation.</p>
                         
                         </li>
                             
                         <li><a href="https://github.com/akshat04/Amazon-Clone"><h4>Amazon Clone</h4></a>
                         <p> An exciting journey into recreating the dynamic and interactive experience of the Amazon website. Crafted with meticulous attention to detail using JavaScript, HTML, and CSS, 
-                            this project demonstrates not just my coding skills but also my understanding of e-commerce web design.</p>
+                            this project demonstrates not just my coding skills but also my understanding of e-commerce web design. </p>
                         </li>
                             
                         <li><h4>Blog website</h4>
-                        <p> Created a Blog website</p>
+                        <p> This project is a personal blog website built using Node.js. It allows users to read, write, and delete blog posts. 
+                            The website features a user-friendly interface and is designed to be responsive and accessible on various devices.</p>
                         </li>
-                    </ul>
+                    </ol>
                 </div>
-                <div id="carousel" class="carousel">
-                    <div class="carousel-images">
-                        <img src={one} alt="First Image"></img>
-                        <img src={two} alt="First Image"></img>
-                        <img src={three} alt="First Image"></img>
-                        <img src={four} alt="First Image"></img>
-                        <img src={five} alt="First Image"></img>
-                        <img src={six} alt="First Image"></img>
-                        <img src={seven} alt="First Image"></img>
-                        <img src={eight} alt="First Image"></img>
-            
-                    </div>
-                    <button class="prev" onclick="moveSlide(-1)">❮</button>
-                    <button class="next" onclick="moveSlide(1)">❯</button> 
+                <div>
+                <Carousel images={images} />
                 </div>
             </div>
             <Loader type="pacman" />
         </>
     );
-}
+};
 
 export default Portfolio;
