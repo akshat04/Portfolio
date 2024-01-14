@@ -67,6 +67,13 @@ const Portfolio = () => {
                     />
                 </h1>
                 <div>{renderPortfolio(portfolio)}</div>
+                <div>
+                    <ul>
+                        <li>Movie Portal</li>
+                        <li>Amazon Clone</li>
+                        <li>Blog Website</li>
+                    </ul>
+                </div>
             </div>
             <Loader type="pacman" />
         </>
