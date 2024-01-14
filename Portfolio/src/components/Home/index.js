@@ -45,6 +45,9 @@ const Home = () => {
               idx={10}
             />
           </h1>
+          <h2>
+            "I believe that the most important single thing beyond discipline and creativity is daring to dare." - Maya Angelou
+          </h2>
           <Link to="/contact" className="flat-button">
             CONTACT ME
           </Link>
